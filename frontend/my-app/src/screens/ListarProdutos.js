@@ -32,7 +32,7 @@ export default function ListarProdutos() {
 
 const styles = StyleSheet.create({
   container: { flex: 1, padding: 20 },
-  card: { padding: 15, marginBottom: 10, borderWidth: 1, borderColor: '#ccc', borderRadius: 8 },
+  card: { padding: 15, marginBottom: 10, borderWidth: 1, borderColor: '#5e71c2', borderRadius: 8, backgroundColor : '#c3dbf738' },
   titulo: { fontSize: 18, fontWeight: 'bold' },
   valor: { color: 'green', fontWeight: 'bold' }
 });

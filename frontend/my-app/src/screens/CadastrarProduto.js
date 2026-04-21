@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, TextInput, Button, StyleSheet } from 'react-native';
+import { View, TextInput, Button, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { API_URL } from '../services/api';
 
 export default function CadastrarProduto({ navigation }) {
@@ -46,16 +46,22 @@ export default function CadastrarProduto({ navigation }) {
 
   return (
     <View style={styles.container}>
+      <Text style={styles.texto}>Cadastro de novos produtos</Text>
       <TextInput style={styles.input} placeholder="Título" value={titulo} onChangeText={setTitulo} />
       <TextInput style={styles.input} placeholder="Marca" value={marca} onChangeText={setMarca} />
       <TextInput style={styles.input} placeholder="Valor" value={valor} keyboardType="numeric" onChangeText={setValor} />
       <TextInput style={styles.input} placeholder="Descrição" value={descricao} onChangeText={setDescricao} />
-      <Button title="Salvar Produto" onPress={handleSalvar} />
+      <TouchableOpacity style={styles.botao} onPress={handleSalvar}>
+        <Text style={styles.botaoTexto}>Salvar novo produto</Text>
+      </TouchableOpacity>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 20, justifyContent: 'center' },
-  input: { borderWidth: 1, borderColor: '#ccc', padding: 10, marginBottom: 15, borderRadius: 5 }
+  container: { flex: 1, justifyContent: 'center', gap: 20, padding: 20, width: '80%', alignSelf: 'center' },
+  input: { borderWidth: 1, borderColor: '#ccc', padding: 10, marginBottom: 15, borderRadius: 5 },
+  botao: { backgroundColor: '#5e71c2', borderRadius: 50, padding: 10, alignItems: 'center' },
+  botaoTexto: { color: '#ffffff', fontSize: 16, fontWeight: 'bold' },
+  texto: { textAlign: 'center', fontSize: 30, marginBottom: 15, fontWeight: 'bold' },
 });
