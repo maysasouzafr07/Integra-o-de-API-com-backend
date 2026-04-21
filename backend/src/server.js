@@ -8,7 +8,7 @@ app.use(cors());
 app.use(express.json());
 
 // Usando as rotas
-app.use(produtoRoutes);
+app.use('/produtos', produtoRoutes);
 
 const PORT = 3000;
 app.listen(PORT, () => {
