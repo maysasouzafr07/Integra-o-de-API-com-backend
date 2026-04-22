@@ -29,7 +29,24 @@ const produtoController = {
       const result = await pool.query(query, values);
       res.status(201).json(result.rows[0]);
     } catch (err) {
+      console.error('Erro ao inserir produto:', err.message);
       res.status(500).json({ error: "Erro ao inserir produto." });
+    }
+  },
+
+  // DELETE /produtos/:id
+  deletar: async (req, res) => {
+    const { id } = req.params;
+
+    try {
+      const result = await pool.query('DELETE FROM produto WHERE id = $1 RETURNING *', [id]);
+      if (result.rowCount === 0) {
+        return res.status(404).json({ error: "Produto não encontrado." });
+      }
+      res.status(200).json({ message: "Produto excluído com sucesso.", produto: result.rows[0] });
+    } catch (err) {
+      console.error('Erro ao deletar produto:', err.message);
+      res.status(500).json({ error: "Erro ao deletar produto." });
     }
   }
 };

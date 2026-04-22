@@ -12,8 +12,9 @@ export default function Home({ navigation }) {
     <View style={styles.container}>
       <Image style={styles.logo} source={require('../../assets/logo_if.png')}/>
       <Text style={styles.texto}>Bem-vindo ao cadastrador de produtos!</Text>
-      <BotaoCustom title="Listar Produtos" onPress={() => navigation.navigate('Listar')} />
+      <BotaoCustom title="Listar produtos" onPress={() => navigation.navigate('Listar')} />
       <BotaoCustom title="Cadastrar novo produto" onPress={() => navigation.navigate('Cadastrar')} />
+      <BotaoCustom title="Excluir produto" onPress={() => navigation.navigate('Deletar')} />
       <BotaoCustom title="Sobre os criadores" onPress={() => navigation.navigate('Sobre')} />
     </View>
   );

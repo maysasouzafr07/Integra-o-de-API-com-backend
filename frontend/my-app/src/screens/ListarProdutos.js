@@ -20,7 +20,7 @@ export default function ListarProdutos() {
         renderItem={({ item }) => (
           <View style={styles.card}>
             <Text style={styles.titulo}>{item.titulo}</Text>
-            <Text>{item.marca}</Text>
+            <Text style={styles.marca}>{item.marca}</Text>
             <Text>{item.descricao}</Text>
             <Text style={styles.valor}>R$ {item.valor}</Text>
           </View>
@@ -34,5 +34,6 @@ const styles = StyleSheet.create({
   container: { flex: 1, padding: 20 },
   card: { padding: 15, marginBottom: 10, borderWidth: 1, borderColor: '#5e71c2', borderRadius: 8, backgroundColor : '#c3dbf738' },
   titulo: { fontSize: 18, fontWeight: 'bold' },
-  valor: { color: 'green', fontWeight: 'bold' }
+  valor: { color: 'green', fontWeight: 'bold' },
+  marca: { color: '#555' },
 });
